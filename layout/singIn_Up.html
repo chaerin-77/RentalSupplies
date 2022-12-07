@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>main</title>
+    <title>Rental-Of-school-supplies</title>
     <link rel="stylesheet" href="../css/singIn_Up.css" type="text/css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
@@ -41,44 +41,47 @@
     </nav>
 
     <!-- 로그인 및 회원가입 -->
-    <div class="wrapper">
-        <div class="container" style="margin: 100px 200px 100px 200px; border: 2px solid gray;">
-          <div class="sign-in-container" style = "border-right: 1px solid gray;">
-            <h1>SIGN IN</h1>    <!-- 로그인 -->
-            <form action="../php/login.php", method="post">
-                <label><input type="radio" class="roleRadio" id="generalMember" name="role" value="generalMember" ondblclick="this.checked=false">학생</label>
-                <label><input type="radio" class="roleRadio" id="manager" name="role" value="manager" ondblclick="this.checked=false">관리자</label>
-                <br>
-                <label>학번</label>
-                <input type="text" name="studentID" id="studentID"><br>
-                <label>Password</label>
-                <input type="password" name="password" id="password"><br>
-                <button class="form_btn" name="signIn">Sign In</button>
-            </form>
-          </div>
-          
-          <div class="sign-up-container" style = "border-left: 1px solid gray;">
-            <h1>SIGN UP</h1>  <!-- 회원가입 -->
-            <form action="../php/signup.php", method="post">
-                <label>학번</label>
-                <input type="text" name="studentID" id="studentID"><br>
+    <div class="container">
+        <div class="content_box">
+            <div class="sign-in-container">
+                <h1>SIGN IN</h1> <!-- 로그인 -->
+                <form action="../php/login.php" , method="post">
+                    <div class="radio_group">
+                        <label class="form_radio"><input type="radio" class="roleRadio" id="generalMember" name="role"
+                                value="generalMember" ondblclick="this.checked=false"> 학생</label>
+                        <label class="form_radio" style="margin-left: 10%;"><input type="radio" class="roleRadio" id="manager" name="role"
+                                value="manager" ondblclick="this.checked=false"> 관리자</label>
+                    </div>
+                    <label class="form_label">학번</label>
+                    <input class="form_input" type="text" name="studentID" id="studentID"><br>
+                    <label class="form_label" style="margin-top: 10%;">Password</label>
+                    <input class="form_input" type="password" name="password" id="password"><br>
+                    <button class="form_btn" style="margin-top: 36%;" name="signIn">Sign In</button>
+                </form>
+            </div>
 
-                <label>이름</label>
-                <input type="text" name="name" id="name"><br>
+            <div class="sign-up-container">
+                <h1>SIGN UP</h1> <!-- 회원가입 -->
+                <form action="../php/signup.php" , method="post">
+                    <label class="form_label">학번</label>
+                    <input class="form_input" type="text" name="studentID" id="studentID"><br>
 
-                <label>Password</label>
-                <input type="password" name="password" id="password"><br>
+                    <label class="form_label">이름</label>
+                    <input class="form_input" type="text" name="name" id="name"><br>
 
-                <label>Phone</label>
-                <input type="text" name="phone" id="phone"><br>
+                    <label class="form_label">Password</label>
+                    <input class="form_input" type="password" name="password" id="password"><br>
 
-                <label>Email</label>
-                <input type="email" name="email" id="email"><br>
-                <button class="form_btn" name="signUp">Sign Up</button>
-            </form>
-          </div>
+                    <label class="form_label">Phone</label>
+                    <input class="form_input" type="text" name="phone" id="phone"><br>
+
+                    <label class="form_label">Email</label>
+                    <input class="form_input" type="email" name="email" id="email"><br>
+                    <button class="form_btn" name="signUp">Sign Up</button>
+                </form>
+            </div>
         </div>
-      </div>
+    </div>
 
     <!-- footer -->
     <footer class="site-footer">
