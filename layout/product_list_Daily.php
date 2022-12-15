@@ -64,7 +64,7 @@
             $category_cnt = $db->query("select COUNT(PID) as 해당물품수 from product;");
             $cnt_result = $category_cnt->fetch_assoc();
             
-            $select_query = $db->query("select PID from product order by pid limit 1;") or die($db->error());
+            $select_query = $db->query("select PID from product where CID = $CID order by pid limit 1;") or die($db->error());
             $result = $select_query->fetch_assoc();
             $check_pid = $result['PID'];
             $product_cnt = 1;
