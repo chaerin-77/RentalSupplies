@@ -56,7 +56,13 @@
     <section class="current_product">
         <div class="container">
             <h3 class="table-name">물품 리스트</h3>
-            <button id="insertButton">물품 추가하기</button>
+            <button id="insertButton" onclick="location.href='product_add_M.php'" >물품 추가하기</button>
+            
+            <?php 
+                $result = $db->query("select * from product")or die($db->error);
+                $cnt = 1;
+            ?>
+            
             <table class="product-table">
                 <colgroup>
                     <col style="width: 5%;" span="1">
@@ -67,19 +73,19 @@
                         <th>물품명</th>
                         <th>전체 개수</th>
                         <th>남은 수량</th>
-                        <th>수정</th>
                         <th>삭제</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php while($row = $result->fetch_assoc()): ?>
                     <tr>
                         <td><?php echo $cnt; $cnt++;?></td>
                         <td><?php echo $row['P_Name']?></td>
                         <td><?php echo $row['Total_Quantity']?></td>
                         <td><?php echo $row['Left_Quantity'] ?></td>
-                        <td><a href="product_add_M.php?editCID=<?php echo $row['CID'];?>&&editPID=<?php echo $row['PID']; ?>" class="btn btn-info">EDIT</a></td>
                         <td><a href="../php/productManage.php?deleteCID=<?php echo $row['CID'];?>&&deletePID=<?php echo $row['PID']; ?>" class="btn btn-danger">DELETE</a></td>
                     </tr>
+                    <?php endwhile; ?>
                 </tbody>
             </table>
         </div>

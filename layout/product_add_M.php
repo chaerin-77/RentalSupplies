@@ -86,11 +86,7 @@
                         <br>
                 </div>
                 
-                <?php if ($_SESSION['isEditioning'] == true): ?>
-                    <button class="btn_submit" type="submit" name="update">Update</button>
-                <?php else: ?>
-                    <button class="btn_submit" type="submit" name="save">Save</button>
-                <?php endif; ?>
+                <button class="btn_submit" type="submit" name="save">Save</button> 
             </form>
         </div>
 
